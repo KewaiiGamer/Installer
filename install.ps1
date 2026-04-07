@@ -1,5 +1,5 @@
-$DOWNLOAD_CLI = "https://github.com/Vencord/Installer/releases/latest/download/VencordInstallerCli.exe"
-$DOWNLOAD_GUI = "https://github.com/Vencord/Installer/releases/latest/download/VencordInstaller.exe"
+$DOWNLOAD_CLI = "https://github.com/KewaiiGamer/Installer/releases/latest/download/VencordInstallerCli.exe"
+$DOWNLOAD_GUI = "https://github.com/KewaiiGamer/Installer/releases/latest/download/VencordInstaller.exe"
 
 if ([Environment]::Is64BitOperatingSystem -and [System.Environment]::OSVersion.Version.Major -ge 10) {
 	Write-Output "=============================="
@@ -23,7 +23,7 @@ switch ($choice) {
 	default {
 		Write-Output "Invalid choice $choice. Exiting..."
 		Return
-	}	
+	}
 }
 
 $outfile = "$env:TEMP\$(([uri]$link).Segments[-1])"
@@ -58,7 +58,7 @@ if ($choice -eq 2) {
 		}
 	}
 
-	Start-Process -Wait -NoNewWindow -FilePath "$outfile" -ArgumentList "$flag" 
+	Start-Process -Wait -NoNewWindow -FilePath "$outfile" -ArgumentList "$flag"
 } else {
 	Start-Process -Wait -NoNewWindow -FilePath "$outfile"
 }
